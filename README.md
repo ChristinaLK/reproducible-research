@@ -6,5 +6,5 @@ This repository contains @ChristinaLK 's notes and hw for @kbroman 's [Tools For
 * `hw02` : Command line skills
 
 
-[tools4rr] http://kbroman.org/Tools4RR
-[tools_repo] https://github.com/kbroman/Tools4RR
+[tools4rr]: http://kbroman.org/Tools4RR
+[tools_repo]: https://github.com/kbroman/Tools4RR
