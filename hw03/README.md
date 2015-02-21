@@ -11,8 +11,8 @@ reproducible research since the report is generated w/ the latest code.
 * Things you need installed: `rmarkdown` R package, that uses `knitr` (R package) and `pandoc`.  
 
 ###"knitting" documents
-*If in RStudio, just click the `knitr` button that looks like a ball of yarn
-*On the command line: 
+* If in RStudio, just click the `knitr` button that looks like a ball of yarn
+* On the command line: 
 ~~~
 R -e "rmarkdown::render('knitr_example.Rmd')"
 ~~~
@@ -25,7 +25,6 @@ R -e "rmarkdown::render('knitr_example.Rmd')"
 ~~~
 ```{r chunk-name}
 x <- c(0,1,2)
-```
 ~~~
 * Chunk options: 
 
