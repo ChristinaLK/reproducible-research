@@ -12,6 +12,8 @@
 	* `-d` and name will extract to named directory.  Can go before/after zipped file.  
 	* http://linux.about.com/od/commands/l/blcmdl1_unzip.htm
 
+Running the included `download_names.sh` script will download and unzip a file of baby names into a `names/` directory.  
+	
 ###Analyzing Files
 	
 * To count the number of `.txt` files in the `names/` directory, I used `ls` to list directory contents, and then piped it to `wc` to count the number of lines: 
