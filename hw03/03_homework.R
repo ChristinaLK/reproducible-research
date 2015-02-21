@@ -7,15 +7,10 @@ output:
     keep_md: yes
 ---
 
-```{r chunk_opts, include=FALSE}
-library(knitr)
-knitr::opts_chunk$set(include=FALSE)
-```
+This R code performs an exhaustive permutation test
+# (with the t-statistic) and plot the results
 
-This report performs an exhaustive permutation test
-(with the t-statistic) on two vectors and plots the results
-
-```{r utility}
+# Utility function
 #     returns binary representation of 1:(2^n)
 binary.v <-
     function(n)
@@ -27,9 +22,7 @@ binary.v <-
     x <- matrix(rep(x,rep(digits, lx)),ncol=lx)
     (x %/% 2^ans) %% 2
 }
-```
 
-```{r perm_fcn}
 # exhaustive permutation test with the t-statistic
 perm.test <-
     function(x, y, var.equal=TRUE)
@@ -59,40 +52,26 @@ perm.test <-
 
     allt
 }
-```
 
-We will run the permutation test on these vectors: 
-
-```{r input, echo=TRUE}
+# some data
 x <- c(6.20, 5.72, 6.07, 6.75, 5.50, 6.39, 4.30, 4.96, 5.48)
 y <- c(6.49, 6.52, 6.28, 8.59, 7.18, 4.92, 6.74, 7.27)
-```
 
-```{r perm_test}
+# run the permutation test
 permt <- perm.test(x, y)
-```
 
-```{r t_stat}
 # grab the observed t-statistic (saved as attribute)
 tobs <- attr(permt, "tobs")
-```
 
-```{r p_val}
 # calculate p-value
 pval <- mean(abs(permt) >= abs(tobs))
-```
 
-After running the permutation test, the t-statistic is `tobs` and the p-value is `pval`.  
+# save the results to a .RData file
+save(permt, tobs, pval, file="permt_results.RData")
 
-```{r plot, results="show"}
+# plot the results
+pdf("hw2_plot.pdf", height=7.5, width=10, pointsize=14)
 hist(permt, breaks=200, xlab="t-statistic", las=1,
      main = paste("P-value =", round(pval, 3)))
 abline(v=tobs, lwd=2, col="violetred")
 dev.off()
-```
-
-####Tools used in this report
-```{r session_info, results="show"}
-library(devtools)
-devtools::session_info()
-```
