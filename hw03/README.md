@@ -28,8 +28,11 @@ R -e "rmarkdown::render('knitr_example.Rmd')"
 ~~~
 ```{r chunk-name}
 x <- c(0,1,2)
+```
 ~~~
+
 * Chunk options: 
+
 | Option			| What happens | 
 | ----------------- | ------------ |
 | `echo=FALSE` 		| Don't include the code |
