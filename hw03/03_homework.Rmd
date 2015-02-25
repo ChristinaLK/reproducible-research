@@ -9,7 +9,7 @@ output:
 
 ```{r chunk_opts, include=FALSE}
 library(knitr)
-knitr::opts_chunk$set(include=FALSE)
+knitr::opts_chunk$set(results="hide", echo=FALSE)
 ```
 
 This report performs an exhaustive permutation test
@@ -63,9 +63,9 @@ perm.test <-
 
 We will run the permutation test on these vectors: 
 
-```{r input, echo=TRUE}
-x <- c(6.20, 5.72, 6.07, 6.75, 5.50, 6.39, 4.30, 4.96, 5.48)
-y <- c(6.49, 6.52, 6.28, 8.59, 7.18, 4.92, 6.74, 7.27)
+```{r input, results="show"}
+(x <- c(6.20, 5.72, 6.07, 6.75, 5.50, 6.39, 4.30, 4.96, 5.48))
+(y <- c(6.49, 6.52, 6.28, 8.59, 7.18, 4.92, 6.74, 7.27))
 ```
 
 ```{r perm_test}
@@ -82,7 +82,7 @@ tobs <- attr(permt, "tobs")
 pval <- mean(abs(permt) >= abs(tobs))
 ```
 
-After running the permutation test, the t-statistic is `tobs` and the p-value is `pval`.  
+After running the permutation test, the t-statistic is `r tobs` and the p-value is `r pval`.  The graph corresponding to these values looks like this: 
 
 ```{r plot, results="show"}
 hist(permt, breaks=200, xlab="t-statistic", las=1,
