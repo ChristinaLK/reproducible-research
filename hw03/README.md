@@ -24,11 +24,9 @@ R -e "rmarkdown::render('knitr_example.Rmd')"
 
 ###Code chunks
 * Inline code indicated by backticks.  
-* Code chunks indicated as follows:
+* Code chunks indicated by three backticks.  Include the following after the first set of 3 backticks.  
 ~~~
-```{r chunk-name}
-x <- c(0,1,2)
-```
+{r label, options}
 ~~~
 
 * Chunk options: 
