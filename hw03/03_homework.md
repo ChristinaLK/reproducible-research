@@ -28,7 +28,7 @@ We will run the permutation test on these vectors:
 
 
 
-After running the permutation test, the t-statistic is -2.3859753 and the p-value is 0.0292884.  
+After running the permutation test, the t-statistic is -2.3859753 and the p-value is 0.0292884.  The graph corresponding to these values looks like this: 
 
 ![](03_homework_files/figure-html/plot-1.png) 
 
